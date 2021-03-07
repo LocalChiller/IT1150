@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img {
+                position: absolute;
+            }
+
+            button {
+                margin-top: 525px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <audio id="changeSound">
+            <source src="change.mp3" type="audio/mpeg">
+        </audio>
+
+        <img id="head" src="head_1.png">
+        <img id="rEye" src="right_eye_1.png">
+        <img id="lEye" src="left_eye_1.png">
+        <img id="mouth" src="mouth_1.png">
+        <img id="nose" src="nose_1.png">
+
+        <button onclick="changeLeftEye()">Change Left eye</button>
+        <button onclick="changeRightEye()">Change Right eye</button>
+        <button onclick="changeMouth()">Change Mouth</button>
+        <button onclick="changeHead()">Change Head</button>
+        <button onclick="changeNose()">Change Nose</button>
+
+        <script>
+            leftEyes = ["left_eye_1.png", "left_eye_2.png", "left_eye_3.png"];
+            rightEyes = ["right_eye_1.png", "right_eye_2.png", "right_eye_3.png"];
+            mouths = ["mouth_1.png", "mouth_2.png", "mouth_3.png"];
+            heads = ["head_1.png", "head_2.png", "head_3.png"];
+            noses = ["nose_1.png", "nose_2.png", "nose_3.png"];
+
+            function getNumber() {
+                num = Math.floor((Math.random() * 3) + 1); //returns number between 0 and 3
+                if (num < 3) {
+                    return num;
+                } else if (num == 3) {
+                    return 0;
+                }
+            }
+
+            function changeLeftEye() {
+                document.getElementById("lEye").src = leftEyes[getNumber()];
+                document.getElementById("changeSound").play();
+            }
+
+            function changeRightEye() {
+                document.getElementById("rEye").src = rightEyes[getNumber()];
+                document.getElementById("changeSound").play();
+            }
+
+            function changeMouth() {
+                document.getElementById("mouth").src = mouths[getNumber()];
+                document.getElementById("changeSound").play();
+            }
+
+            function changeHead() {
+                document.getElementById("head").src = heads[getNumber()];
+                document.getElementById("changeSound").play();
+            }
+
+            function changeNose() {
+                document.getElementById("nose").src = noses[getNumber()];
+                document.getElementById("changeSound").play();
+            }
+        </script>
+    </body>
+</html>
