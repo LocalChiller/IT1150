@@ -32,6 +32,7 @@
         <button onclick="changeMouth()">Change Mouth</button>
         <button onclick="changeHead()">Change Head</button>
         <button onclick="changeNose()">Change Nose</button>
+        <button onclick="changeAll()">Randomize</button>
 
         <script>
             leftEyes = ["left_eye_1.png", "left_eye_2.png", "left_eye_3.png"];
@@ -70,6 +71,15 @@
             }
 
             function changeNose() {
+                document.getElementById("nose").src = noses[getNumber()];
+                document.getElementById("changeSound").play();
+            }
+
+            function changeAll() {
+                document.getElementById("lEye").src = leftEyes[getNumber()];
+                document.getElementById("rEye").src = rightEyes[getNumber()];
+                document.getElementById("mouth").src = mouths[getNumber()];
+                document.getElementById("head").src = heads[getNumber()];
                 document.getElementById("nose").src = noses[getNumber()];
                 document.getElementById("changeSound").play();
             }
