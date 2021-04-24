@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Demo</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#icann").hide();
+                $("#wwwc").hide();
+
+                $("#ietfButton").click(function(){
+                    $("#ietf").show();
+                    $("#icann").hide();
+                    $("#wwwc").hide();
+                });
+
+                $("#icannButton").click(function(){
+                    $("#ietf").hide();
+                    $("#icann").show();
+                    $("#wwwc").hide();
+                });
+
+                $("#wwwcButton").click(function(){
+                    $("#ietf").hide();
+                    $("#icann").hide();
+                    $("#wwwc").show();
+                });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <nav class="col-2 menu">
+            <ul>
+                <li id="ietfButton">IETF</li>
+                <li id="icannButton">ICANN</li>
+                <li id="wwwcButton">W3C</li>
+            </ul>
+        </nav>
+        
+        <div class="row" id="ietf">
+            <article class="col-6">
+                <h2>Internet Engineering Task Force</h2>
+                <p>The Internet Engineering Task Force is an international group of network designers, operators, vendors, and researchers overseeing the advancement of internet architecture and the operation of the internet. IETF Working Groups develop RFC documents that detail computer networking protocols, procedures, programs, and concepts. <br><br>Source: <a href="https://www.ietf.org/">IETF Website</a></p>
+            </article>
+            <img alt="IETF Logo" title="IETF Logo" class="col-4" src="ietfLogo.png">
+        </div>
+
+        <div class="row" id="icann">
+            <article class="col-6">
+                <h2>Internet Corporation for Assigned Names and Numbers</h2>
+                <p>The Internet Corporation for Assigned Names and Numbers is a non-profit organization that has multiple responsibilities. ICANN determines IP address space allocation, assigns protocol identifiers, manages top-level domain name systems, and is responsible for root server system functions. <br><br>Source: <a href="https://www.icann.org/">ICANN Website</a></p>
+            </article>
+            <img alt="ICANN Logo" title="ICANN Logo" class="col-4" src="icannLogo.png">
+        </div>
+
+        <div class="row" id="wwwc">
+            <article class="col-6">
+                <h2>World Wide Web Consortium</h2>
+                <p>The World Wide Web Consortium is a community made up of member organizations, full-time staff, and members of the public work together to develop web standards. These standards define an open platform for application development that enable developers to make experiences available on any device.<br><br>Source: <a href="https://www.w3.org/">W3C Website</a></p>
+            </article>
+            <img alt="W3C Logo" title="W3C Logo" class="col-4" src="w3cLogo.png">
+        </div>
+    </body>
+</html>
